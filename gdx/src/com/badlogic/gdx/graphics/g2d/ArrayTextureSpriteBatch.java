@@ -60,7 +60,9 @@ import com.badlogic.gdx.math.Matrix4;
  * @author VaTTeRGeR (ArrayTextureSpriteBatch) */
 
 public class ArrayTextureSpriteBatch implements Batch {
-
+	
+	private static final int INTEGER_BYTES = 4;
+	
 	private int idx = 0;
 
 	private final Mesh mesh;
@@ -203,7 +205,7 @@ public class ArrayTextureSpriteBatch implements Batch {
 			ownsShader = false;
 		}
 
-		FBO_READ_INTBUFF = ByteBuffer.allocateDirect(16 * Integer.BYTES).order(ByteOrder.nativeOrder()).asIntBuffer();
+		FBO_READ_INTBUFF = ByteBuffer.allocateDirect(16 * INTEGER_BYTES).order(ByteOrder.nativeOrder()).asIntBuffer();
 
 		usedTextures = new Texture[maxTextureSlots];
 
